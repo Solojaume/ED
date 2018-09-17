@@ -1,0 +1,9 @@
+20180917
+Virtualbox (pendiente de anotar)
+
+Git: creación cuenta github
+git config --global user.name "Solojaume"
+git config --global user.email jaumeponsorti@gmail.com
+git config --global user.name "Solojaume"
+git config --global user.email jaumeponsorti@gmail.com
+

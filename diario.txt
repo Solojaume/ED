@@ -7,3 +7,22 @@ git config --global user.email jaumeponsorti@gmail.com
 git config --global user.name "Solojaume"
 git config --global user.email jaumeponsorti@gmail.com
 
+20180924 
+En la máquina virtual con ubuntu 16.04 hemos instalado el jdk java8:
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt update
+sudo apt install oracle-java8-installer
+ Creamos HolaMundo.java, compilamos y ejecutamos.
+
+20180927
+ sudo apt update
+ sudo apt install git
+
+20181001
+ descargamos eclipse IDE for java developers desde la página oficial de eclipse
+para instalar, simplemente descomprimir
+
+
+
+
+

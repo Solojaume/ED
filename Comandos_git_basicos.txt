@@ -7,7 +7,8 @@ git clone https://github.com/Solojaume/ed
    24  git status (comprueba los cambios no guardados)
    26  git add .(se añade los cambios a la version)
    28  git commit -m "Añadido diario.txt"(creamos una nueva version, entre "" se dice que se cambia)
-   29  git log
+   29  git log(saber cuantas versiones tienes)
    30  git status
    32  git push (subir a github)
-
+       git pull (bajar de github)
+       git diff (muestra los cambios desde la ultima versión)

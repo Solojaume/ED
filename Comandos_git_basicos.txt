@@ -12,3 +12,7 @@ git clone https://github.com/Solojaume/ed
    32  git push (subir a github)
        git pull (bajar de github)
        git diff (muestra los cambios desde la ultima versión)
+       git tag  (permite darle un nombre a la versión
+       git checkout <hash> (vuelve una versión (o commit) anterior que se a indicado)
+       git checkout - (vuelve a la ultima commit)
+       git checkout -- (descarta los cambios)

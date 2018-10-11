@@ -16,9 +16,9 @@ public class Suma {
 		BigDecimal resta =numero1.subtract(numero2);
 		BigDecimal producto =numero1.multiply(numero2);
 		BigDecimal dividir =numero1.divide(numero2);
-	    System.out.print("Suma ="+suma);
-	    System.out.print("resta ="+resta);
-	    System.out.print("Producto ="+producto);
-	    System.out.print("Dividir ="+dividir);
+	    System.out.println("Suma ="+suma);
+	    System.out.println("resta ="+resta);
+	    System.out.println("Producto ="+producto);
+	    System.out.println("Dividir ="+dividir);
 	}
 }

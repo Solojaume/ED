@@ -28,7 +28,7 @@ public class Adivina {
 	               System.out.println("Es mayor");
 	               maximo = num;
 	            }
-	           else{
+	           if(num<numAleatorio){
 	               System.out.println("Es menor");
 	               minimo = num;
 	            }   

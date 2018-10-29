@@ -23,7 +23,20 @@ class VectorTest {
 	
 	@Test
 	void min(){
-      assertEquals(12, Vector.min (new int[] {16, 12,15,14,17}));		
-		
+      assertEquals(12, Vector.min (new int[] {16, 12,15,14,17}));
+      assertEquals(16, Vector.min (new int[] {16,32,18,23,17}));
+      assertEquals(3, Vector.min (new int[] {18, 3,17}));
+      assertEquals(17, Vector.min (new int[] {17}));
 	}
+	
+    @Test
+    void indexOfMin() {
+    	 assertEquals(1, Vector.indexOfMin (new int[] {16, 12,15,14,17}));
+    	 assertEquals(0, Vector.indexOfMin (new int[] {16, 23,17}));
+    	 assertEquals(4, Vector.indexOfMin (new int[] {16, 23,14,32,6}));
+    	 assertEquals(0, Vector.indexOfMin (new int[] {14,15}));
+    	 assertEquals(1, Vector.indexOfMin (new int[] {15,14}));
+    	 assertEquals(0, Vector.indexOfMin (new int[] {14}));
+    }
+    
 }

@@ -22,6 +22,11 @@ sudo apt install oracle-java8-installer
  descargamos eclipse IDE for java developers desde la página oficial de eclipse
 para instalar, simplemente descomprimir
 
+20181120
+Actualizado .gitignore y diario.txt
+Añadidos CSuma y CHolaMundo;
+
+
 
 
 

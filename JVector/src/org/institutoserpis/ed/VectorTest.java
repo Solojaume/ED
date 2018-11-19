@@ -39,4 +39,18 @@ class VectorTest {
     	 assertEquals(0, Vector.indexOfMin (new int[] {14}));
     }
     
+	@Test
+	void sort() {
+		int[] v = new int[] { 15, 12 };
+		Vector.sort(v);
+		assertArrayEquals(new int[] { 12, 15 }, v);
+		v = new int[] { 17, 12, 15 };
+		Vector.sort(v);
+		assertArrayEquals(new int[] { 12, 15, 17 }, v);
+
+	}
+	
+	void sortEmty() {
+		int[] v = new int[] {};
+	}
 }

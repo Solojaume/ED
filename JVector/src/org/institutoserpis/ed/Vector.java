@@ -27,13 +27,18 @@ public class Vector {
 //    	return indexOf(v,min(v));
 //    }
     public static int indexOfMin(int[] v) {
-    	int min=v[0], indice=0;
-    	for (int i = 1; i < v.length; i++) 
-    		if(v[i]< min ) {
-    			  min=v[i];
-    			  indice=i;
-    		 }
-        return indice;	
+//    	int min=v[0], indice=0;
+//    	for (int i = 1; i < v.length; i++) 
+//    		if(v[i]< min ) {
+//    			  min=v[i];
+//    			  indice=i;
+//    		 }
+//        return indice;
+    	int indexOfMin = 0;
+		for (int index = 1; index < v.length; index++)
+			if (v[index] < v[indexOfMin])
+				indexOfMin = index;
+return indexOfMin;
      }
     public static void sort(int[] v) {
     	int aux;

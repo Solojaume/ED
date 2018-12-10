@@ -15,6 +15,8 @@ public partial class MainWindow
 
 	private global::Gtk.Label labelSaludo;
 
+	private global::Gtk.VBox vBox;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -74,6 +76,13 @@ public partial class MainWindow
 		w5.Position = 1;
 		w5.Expand = false;
 		w5.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.vBox = new global::Gtk.VBox();
+		this.vBox.Name = "vBox";
+		this.vBox.Spacing = 6;
+		this.vbox1.Add(this.vBox);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.vBox]));
+		w6.Position = 2;
 		this.Add(this.vbox1);
 		if ((this.Child != null))
 		{

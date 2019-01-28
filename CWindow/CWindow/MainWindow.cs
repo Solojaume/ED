@@ -7,7 +7,7 @@ public partial class MainWindow : Gtk.Window
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
-        Title = "w";
+        Title = "CBingo";
         //MessageDialog
         //MessageDialog messageDialog = new MessageDialog(
         //    this, 
@@ -24,7 +24,7 @@ public partial class MainWindow : Gtk.Window
         //otra forma es creando un venta nueva
         button.Clicked += delegate
         {
-            new MyWindow();
+            new MyWindow(;
         };
     }
 

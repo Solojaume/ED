@@ -11,7 +11,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
 
+
+        String mesage = getIntent().getStringExtra(MainActivity.KEY_MESSAGE);
+
+
         TextView textView= findViewById(R.id.textView);
-        textView.setText("Cntenido a pedal");
+        textView.setText(mesage);
     }
 }

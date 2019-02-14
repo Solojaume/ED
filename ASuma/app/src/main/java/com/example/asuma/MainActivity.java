@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
+    BigDecimal result;
     EditText editText1;
     EditText editText2;
     TextView textView;
@@ -18,27 +19,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //Aqui se crea el contenido de la app despues de crear la vista
         editText1 = findViewById(R.id.editText1);
         editText2 = findViewById(R.id.editText2);
         textView = findViewById(R.id.textView);
+
     }
 
     public void sumar(View view){
-        BigDecimal suma = getDecimal1().add(getDecimal2());
-        textView.setText(String.valueOf(suma));
+        result= getDecimal1().add(getDecimal2());
+        textView.setText(""+result);
+        //textView.setText(String.valueOf(suma))
     }
 
     public void restar(View view){
-        BigDecimal resta = getDecimal1().subtract(getDecimal2());
-        textView.setText(""+resta);
+       result = getDecimal1().subtract(getDecimal2());
+        textView.setText(""+result);
 //        Double n1 = Double.parseDouble(cadenaN1);
 //        Double n2 = Double.parseDouble(cadenaN2);
 //        double resta = n1-n2;
     }
 
     public void borrar(View view){
-        textView.setText(" ");
+        textView.setText("");
         editText1.setText("");
         editText2.setText("");
     }
@@ -54,13 +58,12 @@ public class MainActivity extends AppCompatActivity {
         return new BigDecimal(cadenaN2);
     }
 
-    private double getDouble1(){
-        String cadenaN1 = editText1.getText().toString();
-        return Double.parseDouble(cadenaN1);
+    public void versionSimple(){
+
     }
-    private double getDouble2(){
-        String cadenaN1 = editText1.getText().toString();
-        return Double.parseDouble(cadenaN1);
+
+    private boolean isEmpty(){
+        return editText1.getText().toString().trim().isEmpty();
     }
 
 

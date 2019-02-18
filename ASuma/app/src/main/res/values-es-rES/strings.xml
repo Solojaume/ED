@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_s">Simple</string>
+    <string name="button_M">Medio</string>
+    <string name="Button_C">Complejo</string>
+
+</resources>

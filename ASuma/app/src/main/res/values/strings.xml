@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">ASuma</string>
+    <string name="app_name" translatable="false">ASuma</string>
+    <string name="button_s">Simple</string>
+    <string name="button_M">Medium</string>
+    <string name="Button_C">Complex</string>
 </resources>

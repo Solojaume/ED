@@ -1,5 +1,6 @@
 package com.example.asuma;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -58,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         return new BigDecimal(cadenaN2);
     }
 
-    public void versionSimple(){
+    public void versionSimple(View view){
+        Intent intent = new Intent(this,CalculadoraSimple.class);
+        startActivity(intent);
 
     }
 

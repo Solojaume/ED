@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-public class MainActivity extends AppCompatActivity {
+public class CalculadoraComplej extends AppCompatActivity {
 
     BigDecimal result;
     EditText editText1;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_calculadora_complej);
 
 
         //Aqui se crea el contenido de la app despues de crear la vista
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void restar(View view){
-       result = getDecimal1().subtract(getDecimal2());
+        result = getDecimal1().subtract(getDecimal2());
         textView.setText(""+result);
 //        Double n1 = Double.parseDouble(cadenaN1);
 //        Double n2 = Double.parseDouble(cadenaN2);
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     //Obtiener los numeros
     private BigDecimal getDecimal1(){
         String cadenaN1 = editText1.getText().toString();
-       return new BigDecimal(cadenaN1);
+        return new BigDecimal(cadenaN1);
     }
 
     private BigDecimal getDecimal2(){
@@ -59,18 +59,9 @@ public class MainActivity extends AppCompatActivity {
         return new BigDecimal(cadenaN2);
     }
 
-    public void versionSimple(View view){
-        Intent intent = new Intent(this,CalculadoraSimple.class);
-        startActivity(intent);
 
-    }
-    public void versionCompleja(View view){
-        Intent intent1 = new Intent(this,CalculadoraComplej.class);
-        startActivity(intent1);
-    }
 
     private boolean isEmpty(){
         return editText1.getText().toString().trim().isEmpty();
     }
-
 }

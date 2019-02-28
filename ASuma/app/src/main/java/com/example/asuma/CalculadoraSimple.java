@@ -22,11 +22,13 @@ public class CalculadoraSimple extends AppCompatActivity {
     public void sumarS(View view){
         result= result+getDoubleT();
         textView.setText(String.format("%.2f",result));
+        editText1.setText("");
         //textView.setText(String.valueOf(suma))
     }
     public void restarS(View view){
         result= result-getDoubleT();
         textView.setText(String.format("%.3f",result));
+        editText1.setText("");
         //textView.setText(String.valueOf(suma))
     }
 

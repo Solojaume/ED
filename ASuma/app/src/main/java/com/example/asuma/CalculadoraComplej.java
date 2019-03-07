@@ -19,6 +19,8 @@ public class CalculadoraComplej extends AppCompatActivity {
     EditText editText2;
     TextView textView;
     Button buttonIgual;
+    Button buttonMult;
+    Button buttonDividir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,8 @@ public class CalculadoraComplej extends AppCompatActivity {
         editText1 = findViewById(R.id.editText1);
         editText2 = findViewById(R.id.editText2);
         textView = findViewById(R.id.textView);
+        buttonDividir= findViewById(R.id.button9);
+        buttonMult= findViewById(R.id.button8);
         buttonIgual = findViewById(R.id.button6);
         buttonIgual.setVisibility(View.INVISIBLE);
         toggle = (ToggleButton) findViewById(R.id.toggleButton);
@@ -74,6 +78,28 @@ public class CalculadoraComplej extends AppCompatActivity {
 //        Double n1 = Double.parseDouble(cadenaN1);
 //        Double n2 = Double.parseDouble(cadenaN2);
 //        double resta = n1-n2;
+    }
+
+    public void multiplicar(View view){
+        if (toggle.isChecked()){
+            result= result.add(getDecimal1()) ;
+        }
+        else
+            result= getDecimal1().add(getDecimal2());
+        textView.setText(""+result);
+    }
+
+    public void dividir(View view){
+        if (toggle.isChecked()){
+            result = result.add(getDecimal1()) ;
+        }
+        else
+            result = getDecimal1().add(getDecimal2());
+        textView.setText(""+result);
+    }
+
+    public void igual(View view ){
+
     }
 
     public void borrar(View view){

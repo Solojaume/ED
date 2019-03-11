@@ -3,6 +3,7 @@ package com.example.asuma;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +22,7 @@ public class CalculadoraComplej extends AppCompatActivity {
     Button buttonIgual;
     Button buttonMult;
     Button buttonDividir;
-    @Override
+    String evalue;    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculadora_complej);
@@ -33,6 +34,7 @@ public class CalculadoraComplej extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         buttonDividir= findViewById(R.id.button9);
         buttonMult= findViewById(R.id.button8);
+        result=convertirADecimal(0);
         buttonIgual = findViewById(R.id.button6);
         buttonIgual.setVisibility(View.INVISIBLE);
         toggle = (ToggleButton) findViewById(R.id.toggleButton);
@@ -41,7 +43,8 @@ public class CalculadoraComplej extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // The toggle is enabled
-                    buttonIgual.setVisibility(View.VISIBLE);
+                    // buttonIgual.setVisibility(View.VISIBLE);
+
                     editText2.setEnabled(false);
 
                 } else {
@@ -52,6 +55,27 @@ public class CalculadoraComplej extends AppCompatActivity {
                 }
             }
         });
+
+        editText1.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                evalue="1";
+                System.out.println("n1 SELECCIONADO");
+                return false;
+            }
+        });
+
+        editText2.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                evalue="2";
+                System.out.println("N2 seleccionado");
+                return false;
+            }
+        });
+
 
 
     }
@@ -68,6 +92,7 @@ public class CalculadoraComplej extends AppCompatActivity {
     }
 
     public void restar(View view){
+
         if (toggle.isChecked()){
             result= result.subtract(getDecimal1()) ;
         }
@@ -82,19 +107,26 @@ public class CalculadoraComplej extends AppCompatActivity {
 
     public void multiplicar(View view){
         if (toggle.isChecked()){
-            result= result.add(getDecimal1()) ;
+            if(!result.equals(convertirADecimal(0)))
+               result= result.multiply(getDecimal1()) ;
+            else
+                result=convertirADecimal(1).multiply(getDecimal1());
+
         }
         else
-            result= getDecimal1().add(getDecimal2());
+            result= getDecimal1().multiply(getDecimal2());
         textView.setText(""+result);
     }
 
     public void dividir(View view){
         if (toggle.isChecked()){
-            result = result.add(getDecimal1()) ;
+            if(!result.equals(convertirADecimal(0)))
+                result= result.divide(getDecimal1(), BigDecimal.ROUND_HALF_UP) ;
+            else
+                result=getDecimal1();
         }
         else
-            result = getDecimal1().add(getDecimal2());
+            result = getDecimal1().divide(getDecimal2(), BigDecimal.ROUND_HALF_UP);
         textView.setText(""+result);
     }
 
@@ -106,6 +138,7 @@ public class CalculadoraComplej extends AppCompatActivity {
         textView.setText("0");
         editText1.setText("0");
         editText2.setText("0");
+        result=convertirADecimal(0);
     }
 
     //Obtiener los numeros
@@ -120,7 +153,30 @@ public class CalculadoraComplej extends AppCompatActivity {
         return new BigDecimal(cadenaN2);
     }
 
-    private boolean isEmpty(){
+    private static BigDecimal convertirADecimal(int n){
+         String cadena = String.valueOf(n);
+         return new BigDecimal(cadena);
+    }
+    private static BigDecimal convertirADecimal(String n){
+        String cadena = String.valueOf(n);
+        return new BigDecimal(cadena);
+    }
+
+    private boolean isEmpty1(){
         return editText1.getText().toString().trim().isEmpty();
     }
+
+    private boolean isEmpty2(){
+        return editText2.getText().toString().trim().isEmpty();
+    }
+//    private boolean comprobar(){
+//        switch (evalue) {
+//            case "1":
+//                if (onTouchEvent())
+//                break;
+//
+//        }
+//        return false;
+//    }
+
 }

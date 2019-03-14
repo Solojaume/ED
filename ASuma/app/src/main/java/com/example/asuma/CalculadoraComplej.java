@@ -76,13 +76,11 @@ public class CalculadoraComplej extends AppCompatActivity {
             }
         });
 
-
-
     }
 
 
     public void sumar(View view){
-        if (toggle.isChecked()){
+        if (toggle.isChecked() ){
             result= result.add(getDecimal1()) ;
         }
         else
@@ -93,7 +91,7 @@ public class CalculadoraComplej extends AppCompatActivity {
 
     public void restar(View view){
 
-        if (toggle.isChecked()){
+        if (toggle.isChecked() ){
             result= result.subtract(getDecimal1()) ;
         }
         else {
@@ -169,14 +167,19 @@ public class CalculadoraComplej extends AppCompatActivity {
     private boolean isEmpty2(){
         return editText2.getText().toString().trim().isEmpty();
     }
-//    private boolean comprobar(){
-//        switch (evalue) {
-//            case "1":
-//                if (onTouchEvent())
-//                break;
-//
-//        }
-//        return false;
-//    }
+
+    private boolean comprobarVacio(){
+        switch (evalue) {
+            case "1":
+                if (isEmpty1()==true)
+                    return true;
+                break;
+            case "2":
+                if(isEmpty2()==true)
+                    return true;
+                break;
+        }
+        return false;
+    }
 
 }

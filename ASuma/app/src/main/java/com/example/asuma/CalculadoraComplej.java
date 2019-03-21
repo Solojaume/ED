@@ -85,7 +85,7 @@ public class CalculadoraComplej extends AppCompatActivity {
         }
         else
             result= getDecimal1().add(getDecimal2());
-        textView.setText(""+result);
+        textView.setText(String.format("%.3f",result));
         //textView.setText(String.valueOf(suma))
     }
 
@@ -97,7 +97,7 @@ public class CalculadoraComplej extends AppCompatActivity {
         else {
             result = getDecimal1().subtract(getDecimal2());
         }
-        textView.setText(""+result);
+        textView.setText(String.format("%.2f",result));
 //        Double n1 = Double.parseDouble(cadenaN1);
 //        Double n2 = Double.parseDouble(cadenaN2);
 //        double resta = n1-n2;
@@ -113,19 +113,27 @@ public class CalculadoraComplej extends AppCompatActivity {
         }
         else
             result= getDecimal1().multiply(getDecimal2());
-        textView.setText(""+result);
+        textView.setText(String.format("%.2f",result));
     }
 
     public void dividir(View view){
         if (toggle.isChecked()){
-            if(!result.equals(convertirADecimal(0)))
-                result= result.divide(getDecimal1(), BigDecimal.ROUND_HALF_UP) ;
+            if(!result.equals(convertirADecimal(0))) {
+                if(getDecimal1().equals(convertirADecimal(0)))
+                    result=getDecimal1();
+                else
+                result = result.divide(getDecimal1(), BigDecimal.ROUND_HALF_UP);
+            }
             else
                 result=getDecimal1();
         }
-        else
+        else {
+            if(getDecimal2().equals(convertirADecimal(0)))
+                result=getDecimal1();
+            else
             result = getDecimal1().divide(getDecimal2(), BigDecimal.ROUND_HALF_UP);
-        textView.setText(""+result);
+        }
+        textView.setText(String.format("%.2f",result));
     }
 
     public void igual(View view ){

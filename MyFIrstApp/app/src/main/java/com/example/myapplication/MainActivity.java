@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         String cadena = editText.getText().toString();
         String message = editText.getText().toString();
         Intent intent = new Intent(this,DisplayMessageActivity.class);
-        intent.putExtra(KEY_MESSAGE, message);
+        intent.putExtra(MainActivity.KEY_MESSAGE, message);
         startActivity(intent);
     }
 

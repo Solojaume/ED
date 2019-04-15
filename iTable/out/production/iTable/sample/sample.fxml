@@ -1,25 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="sample.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+<VBox prefHeight="249.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TableView fx:id="tableView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+      <Label fx:id="label" text="Agenda" />
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn fx:id="tableColumnNombre" prefWidth="75.0" text="Nombre" />
-          <TableColumn fx:id="tableColumnTelefono" prefWidth="75.0" text="Telefono" />
+          <TableColumn fx:id="tableColumnNombre" prefWidth="75.0" text="Nombre">
+             <cellValueFactory>
+                <PropertyValueFactory property="nombre" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="tableColumnTelefono" minWidth="25.0" prefWidth="100.0" text="Telefono">
+             <cellValueFactory>
+                <PropertyValueFactory property="Telefono" />
+             </cellValueFactory>
+          </TableColumn>
         </columns>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </TableView>
+      <HBox prefHeight="30.0" prefWidth="365.0">
+         <children>
+            <Label text="Nombre:">
+               <HBox.margin>
+                  <Insets right="2.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="nombre" prefWidth="100.0">
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="Telefono">
+               <HBox.margin>
+                  <Insets top="7.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="telefono" prefWidth="100.0">
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#addPersona" text="Add">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets top="2.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
    </children>
-</GridPane>
+</VBox>

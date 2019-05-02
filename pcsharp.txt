@@ -1,0 +1,3 @@
+Anotaciones del proyecto pcsharp
+Voy a hacer agenda sencillita
+

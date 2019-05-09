@@ -3,6 +3,7 @@ using Gtk;
 
 public partial class MainWindow : Gtk.Window
 {
+    private object e;
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -13,6 +14,11 @@ public partial class MainWindow : Gtk.Window
         listStore.AppendValues("Rosa", "888");
         listStore.AppendValues("Manolo", "687");
 
+        newAction.Activated += (sender, e) =>
+        {
+            vboxContacto.Visible = true;
+            treeView.Sensitive = false;
+        };
     }
 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)

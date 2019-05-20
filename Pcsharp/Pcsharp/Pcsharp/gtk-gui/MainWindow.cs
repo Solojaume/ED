@@ -33,9 +33,9 @@ public partial class MainWindow
 
 	private global::Gtk.HBox hbox3;
 
-	private global::Gtk.Button button3;
+	private global::Gtk.Button buttonCancelar;
 
-	private global::Gtk.Button button4;
+	private global::Gtk.Button buttonAceptar;
 
 	protected virtual void Build()
 	{
@@ -149,24 +149,24 @@ public partial class MainWindow
 		this.hbox3.Name = "hbox3";
 		this.hbox3.Spacing = 6;
 		// Container child hbox3.Gtk.Box+BoxChild
-		this.button3 = new global::Gtk.Button();
-		this.button3.CanFocus = true;
-		this.button3.Name = "button3";
-		this.button3.UseUnderline = true;
-		this.button3.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
-		this.hbox3.Add(this.button3);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.button3]));
+		this.buttonCancelar = new global::Gtk.Button();
+		this.buttonCancelar.CanFocus = true;
+		this.buttonCancelar.Name = "buttonCancelar";
+		this.buttonCancelar.UseUnderline = true;
+		this.buttonCancelar.Label = global::Mono.Unix.Catalog.GetString("Cancelar");
+		this.hbox3.Add(this.buttonCancelar);
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.buttonCancelar]));
 		w11.Position = 0;
 		w11.Expand = false;
 		w11.Fill = false;
 		// Container child hbox3.Gtk.Box+BoxChild
-		this.button4 = new global::Gtk.Button();
-		this.button4.CanFocus = true;
-		this.button4.Name = "button4";
-		this.button4.UseUnderline = true;
-		this.button4.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
-		this.hbox3.Add(this.button4);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.button4]));
+		this.buttonAceptar = new global::Gtk.Button();
+		this.buttonAceptar.CanFocus = true;
+		this.buttonAceptar.Name = "buttonAceptar";
+		this.buttonAceptar.UseUnderline = true;
+		this.buttonAceptar.Label = global::Mono.Unix.Catalog.GetString("Aceptar");
+		this.hbox3.Add(this.buttonAceptar);
+		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.buttonAceptar]));
 		w12.Position = 1;
 		w12.Expand = false;
 		w12.Fill = false;
@@ -189,6 +189,5 @@ public partial class MainWindow
 		this.DefaultHeight = 300;
 		this.vboxContacto.Hide();
 		this.Show();
-		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 	}
 }

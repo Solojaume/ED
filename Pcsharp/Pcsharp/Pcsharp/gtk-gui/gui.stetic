@@ -22,7 +22,6 @@
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
-    <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
@@ -175,7 +174,7 @@
                 <property name="MemberName" />
                 <property name="Spacing">6</property>
                 <child>
-                  <widget class="Gtk.Button" id="button3">
+                  <widget class="Gtk.Button" id="buttonCancelar">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
@@ -190,7 +189,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="button4">
+                  <widget class="Gtk.Button" id="buttonAceptar">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
